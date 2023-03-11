@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Growtopia Casino Simulation</title>
+		<link rel="stylesheet" href="styles.css">
+	
+	</head>
+	<body>
+		<main>
+			<div class="threeLocks">
+				<div class="wl">
+					<img class="wl lock" src="worldLock.png" ondblclick="wlToDl()">
+					
+				</div>
+				<div class="dl lock">
+					<img class="lock" src="diamondLock.png" ondblclick="dlToWl()">
+				</div>
+				<input type="submit" value="Turn 100dls To 1bgl" onclick="dlToBgl()" id="dlToBgl">
+				
+				<div class="bgl lock">
+					<img class="lock" src="blueGemLock.png" ondblclick="bglToDl()">
+				</div>
+			
+			</div>
+			
+			<div class="threeLocksForBet">
+				<div class="wlLogoForBet">
+					<img class="wlLogoForBet1" src="worldLock.png" >
+					
+				</div>
+				<div class="dlLogoForBet">
+					<img class="dlLogoForBet1" src="diamondLock.png" >
+				</div>
+				<div class="bglLogoForBet">
+					<img class="bglLogoForBet1" src="blueGemLock.png" >
+				</div>
+			
+			</div>
+			
+			<div class="lockValue">
+				<div class="wlValue">
+					<h1 id="wlValue1">0</h1>
+				</div>
+				<div class="dlValue">
+					<h1 id="dlValue1">0</h1>
+				</div>
+				<div class="bglValue">
+					<h1 id="bglValue1">0</h1>
+				</div>
+			</div>
+			
+			<div class="betInputs">
+				<div class="wlInput">
+					<input type="text" maxlength="3" id="wlInput" value="0">
+				</div>
+				
+				<div class="dlInput">
+					<input type="text" maxlength="3" id="dlInput" value="0">
+				</div>
+				
+				<div class="bglInput">
+					<input type="text" maxlength="3" id="bglInput" value="0">
+				</div>
+			</div>
+			
+			<div class="wheelAndSpin">
+				<div class="spinWheel">
+					<img id="spin1" src="spin1.png">
+				</div>
+				<div class="spinButton">
+					<input onclick="spinClicked()" type="submit" value="Spin" class="spinButton" id="spinButton">
+				</div>
+			</div>
+			
+		
+		</main>
+		
+		<script>
+		
+			let wlValue = 199;
+			let dlValue = 99;
+			let bglValue = 199;
+			
+			let beatGame = 0;
+			let isWheelSpinning = false;
+			
+			function lockValueUpdater() {
+				setTimeout(function(){
+				document.getElementById('wlValue1').innerHTML = wlValue;
+				document.getElementById('dlValue1').innerHTML = dlValue;
+				document.getElementById('bglValue1').innerHTML = bglValue;
+				
+				lockValueUpdater();
+				},1)
+				
+				setTimeout(function() {
+					if (wlValue >= 200 && dlValue >= 200 && bglValue >= 200) {
+						if (beatGame == 0) {
+						beatGame++;
+						alert('You have beaten the game! Impressive or you just cheated? Lol');
+						}
+					}
+				},10)
+			}
+			
+			lockValueUpdater();
+			
+					
+			
+			let wlBet = 0;
+			let dlBet = 0;
+			let bglBet = 0;
+			
+			let winOrLose = 0;
+			
+			let spinTimes = 0;
+			function spinClicked() {
+				isWheelSpinning = true;
+				document.getElementById('spinButton').disabled = true;
+				
+				wlBet = parseInt(document.getElementById('wlInput').value);
+				dlBet = parseInt(document.getElementById('dlInput').value);
+				bglBet = parseInt(document.getElementById('bglInput').value);
+				
+				if (wlBet > wlValue || dlBet > dlValue || bglBet > bglValue) {
+					alert('not enough funds');
+					document.getElementById('spinButton').disabled = false;
+					return;
+				}
+				
+				if (wlBet > 200 || dlBet > 200 || bglBet > 200 || wlBet < 0 || dlBet < 0 || bglBet < 0 ) {
+					alert('all bet value must below 200 and above 0');
+					document.getElementById('spinButton').disabled = false;
+					return;
+				}
+				
+				if (wlBet % 10 !=0 || dlBet % 10 !=0 || bglBet % 10 !=0) {
+					alert('Bet must be multiple of 10 eg.(10,20,30,40,50...)');
+					document.getElementById('spinButton').disabled = false;
+					return;
+				}
+				
+				
+				
+				winOrLose = Math.floor(Math.random() * 2);
+				
+				
+				
+				spinAnimation();
+				
+				function spinAnimation() {
+				setTimeout(function(){
+				document.getElementById("spin1").src = "spin2.png";
+				
+				},200);
+				
+				setTimeout(function(){
+				document.getElementById("spin1").src = "spin1.png";
+				spinTimes++;
+				
+				if (spinTimes == 10) {
+					spinTimes = 0;
+					
+					
+					if (winOrLose == 0) {
+						bglValue = bglValue - bglBet;
+						wlValue = wlValue - wlBet;
+						dlValue = dlValue - dlBet;
+						
+						
+					}
+					
+					if (winOrLose == 1) {
+						bglValue = bglValue + bglBet - (bglBet * 0.1);
+						dlValue = dlValue + dlBet - (dlBet * 0.1);
+						wlValue = wlValue + wlBet - (wlBet * 0.1);
+						
+						
+					}
+					
+					document.getElementById('spinButton').disabled = false;
+					isWheelSpinning = false;
+					return;
+				}
+				
+				spinAnimation();
+				
+				},400);
+				
+				
+			} } 
+			
+			
+			
+			
+			
+			function wlToDl() {
+				if (isWheelSpinning || wlValue < 100 || dlValue > 199) {
+					return; 
+				}
+				
+				wlValue = wlValue - 100;
+				dlValue = dlValue + 1;
+
+				
+				
+			}
+			
+			function dlToWl() {
+				if (isWheelSpinning || dlValue < 1 || wlValue > 100) {
+					return; 
+				}
+				
+				wlValue = wlValue + 100;
+				dlValue = dlValue - 1;
+
+				
+				
+			}
+			
+			function bglToDl() {
+				if (isWheelSpinning || bglValue < 1 || dlValue > 100) {
+					return; 
+				}
+				
+				dlValue = dlValue + 100;
+				bglValue = bglValue - 1;
+
+				
+				
+			}
+			
+			function isDlConvertableToBgl() {
+				setTimeout(function() {
+					if (dlValue >= 100) {
+						document.getElementById('dlToBgl').style.display = "block";
+						if (dlValue < 100) {
+							document.getElementById('dlToBgl').style.display = "none";
+						}
+					}
+					isDlConvertableToBgl();
+				},1)
+				
+				
+			}
+			
+			isDlConvertableToBgl();
+			
+			function dlToBgl() {
+				if (isWheelSpinning || dlValue < 100 || bglValue > 199) {
+					return; 
+				}
+				
+				dlValue = dlValue - 100;
+				bglValue = bglValue + 1;
+			}
+		
+		</script>
+	
+	</body>
+
+</html>

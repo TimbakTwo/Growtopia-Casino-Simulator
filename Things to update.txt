@@ -1,0 +1,6 @@
+when win auto convert locks when the other locks are full (Finished)
+
+have only appropriate storage for winnings for all locks (Finished)
+
+add cheat menu for non programmers (Finished)
+

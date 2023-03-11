@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Growtopia Casino Simulation</title>
+		<link rel="stylesheet" href="styles.css">
+	
+	</head>
+	<body>
+		<main>
+			<div class="threeLocks">
+				<div class="wl">
+					<img class="wl lock" src="worldLock.png">
+					
+				</div>
+				<div class="dl lock">
+					<img class="lock" src="diamondLock.png">
+				</div>
+				<div class="bgl lock">
+					<img class="lock" src="blueGemLock.png">
+				</div>
+			
+			</div>
+			
+			<div class="threeLocksForBet">
+				<div class="wlLogoForBet">
+					<img class="wlLogoForBet1" src="worldLock.png">
+					
+				</div>
+				<div class="dlLogoForBet">
+					<img class="dlLogoForBet1" src="diamondLock.png">
+				</div>
+				<div class="bglLogoForBet">
+					<img class="bglLogoForBet1" src="blueGemLock.png">
+				</div>
+			
+			</div>
+			
+			<div class="lockValue">
+				<div class="wlValue">
+					<h1 id="wlValue1">0</h1>
+				</div>
+				<div class="dlValue">
+					<h1 id="dlValue1">0</h1>
+				</div>
+				<div class="bglValue">
+					<h1 id="bglValue1">0</h1>
+				</div>
+			</div>
+			
+			<div class="betInputs">
+				<div class="wlInput">
+					<input type="text" maxlength="3" id="wlInput">
+				</div>
+				
+				<div class="dlInput">
+					<input type="text" maxlength="3" id="dlInput">
+				</div>
+				
+				<div class="bglInput">
+					<input type="text" maxlength="3" id="bglInput">
+				</div>
+			</div>
+			
+			<div class="wheelAndSpin">
+				<div class="spinWheel">
+					<img id="spin1" src="spin1.png">
+				</div>
+				<div class="spinButton">
+					<input onclick="spinClicked()" type="submit" value="Spin" class="spinButton" id="spinButton">
+				</div>
+			</div>
+			
+		
+		</main>
+		
+		<script>
+			let wlValue = 0;
+			let dlValue = 0;
+			let bglValue = 1;
+			
+			function lockValueUpdater() {
+				setTimeout(function(){
+				document.getElementById('wlValue1').innerHTML = wlValue;
+				document.getElementById('dlValue1').innerHTML = dlValue;
+				document.getElementById('bglValue1').innerHTML = bglValue;
+				
+				lockValueUpdater();
+				},1)
+			}
+			
+			lockValueUpdater();
+			
+			
+			let wlBet = 0;
+			let dlBet = 0;
+			let bglBet = 0;
+			
+			let spinTimes = 0;
+			function spinClicked() {
+				document.getElementById('spinButton').disabled = true;
+				
+				wlBet = document.getElementById('wlInput').value;
+				dlBet = document.getElementById('dlInput').value;
+				bglBet = document.getElementById('bglInput').value;
+				
+				spinAnimation();
+				
+				function spinAnimation() {
+				setTimeout(function(){
+				document.getElementById("spin1").src = "spin2.png";
+				
+				},200);
+				
+				setTimeout(function(){
+				document.getElementById("spin1").src = "spin1.png";
+				spinTimes++;
+				
+				if (spinTimes == 10) {
+					spinTimes = 0;
+					alert(bglBet);
+					document.getElementById('spinButton').disabled = false;
+					return;
+				}
+				
+				spinAnimation();
+				
+				},400);
+				
+				
+			} }
+			
+			
+			
+			
+			
+			/*
+			function increaseWlTest() {
+				setTimeout(function(){
+					bglValue++;
+				},5000)
+			}
+			
+			increaseWlTest(); */
+		
+		</script>
+	
+	</body>
+
+</html>

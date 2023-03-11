@@ -1,0 +1,99 @@
+#wlCheat,#dlCheat,#bglCheat {
+	height: 65px;
+	position: relative;
+	left: 340px;
+	top: 300px;
+}
+
+.cheatLocks {
+	display: flex;
+	gap: 7rem;
+	
+	
+}
+
+.cheatInputs {
+	display: flex;
+	gap: 7.5rem;
+	top: 240px;
+	left: -190px;
+	position: relative;
+	
+	
+	
+}
+
+#wlCheatInput,#dlCheatInput,#bglCheatInput {
+	width: 50px;
+	height: 30px;
+	font-size: 30px;
+	
+	
+	
+}
+
+#submitCheat {
+	height: 40px;
+	width: 100px;
+	font-size: 25px;
+	border-radius: 20px;
+	border: 1px solid green;
+	left: 500px;
+	position: absolute;
+	top: 160px;
+	display: none;
+}
+
+#submitCheat:hover {
+	background-color: lightblue;
+	
+}
+
+#submitCheat:active {
+	color: red;
+	border: 2px solid red;
+	
+}
+
+@media (max-width: 480px) {
+	#cheat {
+		position: absolute;
+		left: 20px;
+		top: 4px;
+	}
+	
+	#submitCheat {
+		position: absolute;
+		left: 140px;
+	}
+	
+	.cheatInputs {
+	display: flex;
+	gap: 2.4rem;
+	top: 300px;
+	left: -240px;
+	position: relative; }
+	
+	#wlCheat,#dlCheat,#bglCheat {
+	height: 65px;
+	position: relative;
+	left: 50px;
+	top: 350px;
+}
+
+.cheatLocks {
+	display: flex;
+	gap: 2rem;
+	
+	
+	
+}
+	
+	
+	
+}
+	
+	
+}
+
+

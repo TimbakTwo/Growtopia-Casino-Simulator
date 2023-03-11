@@ -1,0 +1,349 @@
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+
+
+body {
+	background-image: url("background.jpg");
+	background-repeat: no-repeat;
+	background-position: 20% 0%;
+	overflow: hidden;
+}
+
+.lock {
+	height: 200px;
+	position: relative;
+	top: 130px;
+	
+}
+
+.wl .lock {
+	height: 65px;
+	top: 70px;
+	left: 75px;
+	position: absolute;
+	
+}
+
+
+
+.wl :hover {
+	height: 75px;
+	top: 65 px;
+	left: 70px;
+	position: absolute;
+	
+}
+
+
+
+
+.dl .lock {
+	height: 75px;
+	top: 70px;
+	left: 55px;
+	position: absolute;
+	
+}
+
+.dl .lock:hover {
+	height: 85px;
+	left: 50px;
+	top: 70px;
+}
+
+.bgl .lock {
+	height: 80px;
+	position: relative;
+	left: 50px;
+	top: 10px;
+}
+
+.bgl .lock:hover {
+	height: 90px;
+	left: 48px;
+	top: 5px;
+}
+
+.lockValue {
+	position: absolute;
+	display: flex;
+	gap: 4rem;
+	flex-direction: column;
+	top: 60px;
+	left: 170px;
+}
+
+.betInputs {
+	position: absolute;
+	display: flex;
+	flex-direction: rows;
+	gap: 10rem;
+	left: 370px;
+	top: 370px;
+}
+
+.betInputs input{
+	border: 2px solid gold;
+	border-radius: 10px;
+	width: 50px;
+	height: 30px;
+	font-size: 30px;
+}
+
+.threeLocksForBet {
+	position: absolute;
+	display: flex;
+	height: 100px;
+	gap: 10.5rem;
+	left: 375px;
+}
+
+.threeLocksForBet img{
+	height: 50px;
+}
+
+.wheelAndSpin {
+	display: flex;
+	flex-direction: column;
+	top: -340px;
+	left: 530px;
+	position: relative;
+	gap: 5rem;
+}
+
+#spin1 {
+	
+	height: 180px;
+	border: 5px solid white;
+	border-radius: 20px;
+	left: -15px;
+	position: relative;
+	
+}
+
+.spinButton {
+	position: relative;
+	left: 24px;
+	top: -20px;
+	border-radius: 5px;
+	border: 0px solid black;
+	height: 30px;
+	width: 60px;
+}
+
+.spinButton .spinButton:hover {
+	border: 3px solid gold;
+	height: 35px;
+	width: 65px;
+	left: 22px;
+	top:-23px;
+}
+
+.spinButton .spinButton:active {
+	background-color: lightblue;
+	
+}
+
+#dlToBgl {
+	position: absolute;
+	top: 290px;
+	left: 33px;
+	border-radius: 20px;
+	border: 1px solid gold;
+	font-family: georgia;
+	display: none;
+	
+}
+
+#dlToBgl:hover {
+	background: lightblue;
+}
+
+#dlToBgl:active {
+	background: rgba(62.7,12.5,94.1,0.3);
+	color: white;
+	
+	
+}
+
+#cheat {
+	position: absolute;
+	left: 960px;
+	top: 20px;
+	
+}
+
+@media (max-width: 480px) {
+  body {
+	background-image: url("background.jpg");
+	background-repeat: no-repeat;
+	background-position: 20% 0%;
+	overflow: hidden;
+}
+
+.lock {
+	top: 130px;
+}
+
+.wl .lock {
+	height: 35px;
+	top: 40px;
+	left: 35px;
+	position: absolute;
+	
+}
+
+.dl .lock {
+	height: 40px;
+	top: -10px;
+	left: 25px;
+	position: absolute;
+	
+}
+
+.dl .lock:hover {
+	height: 40px;
+	left: 25px;
+	top: -10px;
+}
+
+.bgl .lock {
+	height: 45px;
+	position: relative;
+	left: 22px;
+	top: -120px;
+}
+
+.bgl .lock:hover {
+	height: 45px;
+	left: 22px;
+	top: -120px;
+}
+
+.lockValue {
+	position: absolute;
+	display: flex;
+	gap: 1.3rem;
+	flex-direction: column;
+	top: 20px;
+	left: 80px;
+	font-size: 0.9rem;
+}
+
+.betInputs {
+	position: absolute;
+	display: flex;
+	flex-direction: rows;
+	gap: 3rem;
+	left: 62px;
+	top: 530px;
+}
+
+.betInputs input{
+	border: 2px solid gold;
+	border-radius: 10px;
+	width: 50px;
+	height: 30px;
+	font-size: 30px;
+}
+
+.threeLocksForBet {
+	position: absolute;
+	display: flex;
+	height: 100px;
+	gap: 3.5rem;
+	left: 65px;
+	top: 580px;
+}
+
+.threeLocksForBet img{
+	height: 50px;
+}
+
+.wheelAndSpin {
+	display: flex;
+	flex-direction: column;
+	top: -350px;
+	left: 180px;
+	position: relative;
+	gap: 5rem;
+}
+
+#spin1 {
+	
+	height: 180px;
+	border: 5px solid white;
+	border-radius: 20px;
+	left: -15px;
+	position: relative;
+	
+	
+}
+
+.spinButton input {
+	position: relative;
+	left: -140px;
+	top: 70px;
+	border-radius: 5px;
+	border: 1px solid black;
+	height: 50px;
+	width: 250px;
+	font-size: 40px;
+	
+}
+
+.spinButton .spinButton:hover {
+	border: 1px solid gold;
+	height: 50px;
+	width: 250px;
+	left: -140px;
+	top:70px;
+}
+
+.spinButton .spinButton:active {
+	background-color: lightblue;
+	
+}
+
+#dlToBgl {
+	position: absolute;
+	top: 290px;
+	left: 33px;
+	border-radius: 20px;
+	border: 1px solid gold;
+	font-family: georgia;
+	display: none;
+	
+}
+
+#dlToBgl:hover {
+	background: lightblue;
+}
+
+#dlToBgl:active {
+	background: rgba(62.7,12.5,94.1,0.3);
+	color: white;
+	
+	
+}
+}
+
