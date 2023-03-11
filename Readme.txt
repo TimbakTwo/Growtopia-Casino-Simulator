@@ -16,7 +16,7 @@ to most ios devices.
 
 (How To Use)
 
-- If you already download the file you can open the folder and double click the html file named "casino"
+- If you already download the file you can open the folder and double click the html file named "index"
 
 -there is a built in edit currency feature if you want to add money to your account, which is written 
 "Edit your balance" in button, so just click it to enter currency editing mode
