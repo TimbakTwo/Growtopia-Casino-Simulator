@@ -39,9 +39,9 @@ function saveEdit() {
 	
 	
 	
-	wlValue = wlValue + wlEditValue;
-	dlValue = dlValue + dlEditValue;
-	bglValue = bglValue + bglEditValue;
+	wlValue = wlEditValue;
+	dlValue = dlEditValue;
+	bglValue = bglEditValue;
 	
 	if (wlValue > 200 || dlValue > 200 || bglValue > 200 || wlValue < 0 || dlValue < 0 || bglValue < 0) {
 		wlValue = wlValue - wlEditValue;
