@@ -1,3 +1,4 @@
+console.log('cheat 1 updated');
 let cheatButtonNum = 0;
 function cheat() {
 	
