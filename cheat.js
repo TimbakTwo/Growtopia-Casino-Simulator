@@ -1,4 +1,4 @@
-console.log('cheat 1 updated');
+
 let cheatButtonNum = 0;
 function cheat() {
 	
@@ -53,3 +53,5 @@ function saveEdit() {
 		return;
 	}
 }
+
+console.log('cheat 2 updated');
