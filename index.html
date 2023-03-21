@@ -233,9 +233,17 @@
 						
 						if (wlValue > 200) {
 							wlValue = wlValue - 100;
+								if (wlValue > 200) {
+									wlValue -= 100;
+									dlValue++;
+								}
 							dlValue++;
 							if (dlValue > 200) {
 								dlValue = dlValue - 100;
+									if (dlValue > 200) {
+									dlValue -= 100;
+									bglValue++;
+								}
 								bglValue++;
 							}
 							
@@ -328,7 +336,7 @@
 		<script src="cheat.js"></script>
 		
 		<script>
-			console.log('done');
+			console.log('update 1');
 		</script>
 	
 	</body>
