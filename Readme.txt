@@ -36,3 +36,5 @@ near the currency value to exchange currency.
 -Don't worry to convert currency, you can convert it back anytime
 
 -This project is made with effort and passion, I hope you enjoy my project
+
+(This project is currently unsupported)
