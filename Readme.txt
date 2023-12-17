@@ -37,4 +37,6 @@ near the currency value to exchange currency.
 
 -This project is made with effort and passion, I hope you enjoy my project
 
+-This open source project is created for parody purpose of the game and not meant to have save.dat stealer on users
+
 (This project is currently unsupported)
