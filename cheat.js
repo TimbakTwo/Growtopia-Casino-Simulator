@@ -1,3 +1,5 @@
+// This whole javascript file is for cheats
+
 
 let cheatButtonNum = 0;
 function cheat() {
