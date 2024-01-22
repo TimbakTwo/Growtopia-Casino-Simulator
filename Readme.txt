@@ -1,4 +1,4 @@
-Welcome, and thank you for trying out my project
+Welcome, and thank you for trying out my test project
 
 My project is A Casino Simulation to a popular online sandbox Game Growtopia
 
