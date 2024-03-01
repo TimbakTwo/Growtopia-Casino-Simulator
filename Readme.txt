@@ -1,4 +1,4 @@
-Like a phoenix, the burst of the fire burns
+Like a phoenix, the burst of the fire burns, the burn
 
 Welcome, and thank you for trying out my test project
 
